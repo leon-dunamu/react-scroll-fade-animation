@@ -1,27 +1,32 @@
 {
-  "name": "react-scroll-animation",
-  "version": "0.1.0",
+  "name": "react-scroll-fade-animation",
+  "version": "0.1.2",
+  "description": "react scroll fade animation component",
+  "keywords": [
+    "react",
+    "scroll",
+    "animation",
+    "keyframes"
+  ],
+  "homepage": "https://github.com/1seok2/react-scroll-fade-animation",
+  "bugs": {
+    "url": "https://github.com/1seok2/react-scroll-fade-animation/issues",
+    "email": "unos@khu.ac.kr"
+  },
+  "author": {
+    "name": "WonSeog Choi",
+    "email": "unos@khu.ac.kr",
+    "url": "https://1seok2.github.io"
+  },
+  "license": "MIT",
+  "main": "build/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/1seok2/react-scroll-fade-animation.git"
+  },
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "typescript": "^4.2.4",
-    "web-vitals": "^1.0.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
   },
   "browserslist": {
     "production": [
@@ -34,12 +39,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@types/react": "^17.0.5",
-    "@types/react-dom": "^17.0.3",
-    "@types/react-test-renderer": "^17.0.1",
-    "react-test-renderer": "^17.0.2",
-    "ts-jest": "^26.5.6"
   }
 }

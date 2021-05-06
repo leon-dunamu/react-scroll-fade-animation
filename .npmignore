@@ -1,12 +1,15 @@
 # npm
-node_modules/
+node_modules
+demo
+test
 
 # dev
 src
 .gitignore
 rollup.config.js
 tsconfig.json
-!build/ScrollAnimation
+
+*.js.map
 
 # GIT
 .git
