@@ -1,7 +1,7 @@
 @keyframes seog-scroll-animation-bottom-top {
   from {
     opacity: 0;
-    transform: translateY(80px);
+    transform: translateY(1200px);
   }
   to {
     opacity: 1;
