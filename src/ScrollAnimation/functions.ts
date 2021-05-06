@@ -37,3 +37,53 @@ export function setAnimation(
 export const endAnimation = (element: HTMLDivElement) => () => {
   element.style.opacity = '1';
 };
+
+export function createKeyframes() {
+  const style = document.createElement('style');
+  style.type = 'text/css';
+  const keyFrames = `@keyframes seog-scroll-animation-bottom-top {
+    from {
+      opacity: 0;
+      transform: translateY(120px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes seog-scroll-animation-top-bottom {
+    from {
+      opacity: 0;
+      transform: translateY(-120px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes seog-scroll-animation-right-left {
+    from {
+      opacity: 0;
+      transform: translateX(200px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes seog-scroll-animation-left-right {
+    from {
+      opacity: 0;
+      transform: translateX(-200px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }`;
+  style.innerHTML = keyFrames;
+  document.getElementsByTagName('head')[0].appendChild(style);
+}

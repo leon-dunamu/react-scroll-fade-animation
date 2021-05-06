@@ -1,7 +1,8 @@
-import './Scroll.css';
+// import './Scroll.css';
 
 import React from 'react';
 import {
+  createKeyframes,
   endAnimation,
   findDivByRef,
   generateHashStringByLength,
@@ -47,14 +48,25 @@ export default function ScrollAnimationItem({
   }
 
   React.useEffect(function () {
+    createKeyframes();
+  }, []);
+
+  React.useEffect(function () {
     window.addEventListener('scroll', onScroll);
 
     return () => window.removeEventListener('scroll', onScroll);
   });
 
   return (
-    <div className={className} ref={ref} {...rest}>
+    <div className={className} style={styles} ref={ref} {...rest}>
       {children}
     </div>
   );
 }
+
+const styles: React.CSSProperties = {
+  position: 'relative',
+  width: '100%',
+  height: '200px',
+  opacity: '0',
+};
