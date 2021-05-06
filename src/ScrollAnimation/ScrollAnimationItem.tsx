@@ -24,34 +24,25 @@ export default function ScrollAnimationItem({
   children,
   init = false,
   delay = 0,
-  duration = 1500,
+  duration = 1200,
   path = 'top',
   ...rest
 }: ScrollAnimationItemProps) {
-  const [showed, setShowed] = React.useState(false);
   const ref = React.useRef<HTMLDivElement>(null);
 
   const hashClassName = generateHashStringByLength(5);
   const className = `${basicClassName} ssa-${hashClassName}`;
 
   function onScroll() {
-    if (showed === false) {
-      const element = findDivByRef(ref.current);
-      const { top } = element.getBoundingClientRect() as ClientRect;
+    const element = findDivByRef(ref.current);
+    const { top, height } = element.getBoundingClientRect() as ClientRect;
 
-      if (window.scrollY + window.innerHeight / 3 > top) {
-        setShowed(true);
-        window.removeEventListener('scroll', onScroll);
-      }
+    if (window.scrollY + (window.innerHeight + height) / 2 > top) {
+      setAnimation(element, duration, delay, path);
+      window.removeEventListener('scroll', onScroll);
+      setTimeout(endAnimation(element), duration);
     }
   }
-
-  React.useEffect(function () {
-    const element = findDivByRef(ref.current as HTMLElement);
-    setAnimation(element, duration, delay, path);
-
-    setTimeout(endAnimation(element), duration);
-  }, []);
 
   React.useEffect(function () {
     window.addEventListener('scroll', onScroll);
