@@ -13,7 +13,7 @@ function App() {
       >
         zz
       </div>
-      <ScrollAnimationItem path={'top'}>hi</ScrollAnimationItem>
+      <ScrollAnimationItem path={'bottom'}>hi</ScrollAnimationItem>
       <div
         style={{
           height: '100vh',

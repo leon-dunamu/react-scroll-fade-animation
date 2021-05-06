@@ -1,6 +1,6 @@
 import './Scroll.css';
 
-import React, { CSSProperties } from 'react';
+import React from 'react';
 import {
   endAnimation,
   findDivByRef,
@@ -13,8 +13,7 @@ export type pathType = 'top' | 'bottom' | 'left' | 'right';
 
 interface ScrollAnimationItemProps {
   children: React.ReactNode;
-  init?: boolean;
-  style?: CSSProperties;
+  style?: React.CSSProperties;
   delay?: number;
   duration?: number;
   path: pathType;
@@ -22,7 +21,6 @@ interface ScrollAnimationItemProps {
 
 export default function ScrollAnimationItem({
   children,
-  init = false,
   delay = 0,
   duration = 1200,
   path = 'top',
@@ -35,12 +33,16 @@ export default function ScrollAnimationItem({
 
   function onScroll() {
     const element = findDivByRef(ref.current);
-    const { top, height } = element.getBoundingClientRect() as ClientRect;
+    const {
+      top: elementTopPosition,
+      height: elementHeight,
+    } = element.getBoundingClientRect() as ClientRect;
+    const scrollTopPosition = window.scrollY + (window.innerHeight - elementHeight) / 2;
 
-    if (window.scrollY + (window.innerHeight + height) / 2 > top) {
+    if (scrollTopPosition > elementTopPosition) {
       setAnimation(element, duration, delay, path);
-      window.removeEventListener('scroll', onScroll);
       setTimeout(endAnimation(element), duration);
+      window.removeEventListener('scroll', onScroll);
     }
   }
 
