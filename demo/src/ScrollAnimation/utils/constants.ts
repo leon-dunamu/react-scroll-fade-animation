@@ -10,4 +10,16 @@ export const animations = {
   bottom: `${animationCommonName}-top-bottom`,
   left: `${animationCommonName}-right-left`,
   right: `${animationCommonName}-left-right`,
+  'top-bounce': `${animationCommonName}-bottom-top-bounce`,
+  'bottom-bounce': `${animationCommonName}-top-bottom-bounce`,
+  'left-bounce': `${animationCommonName}-right-left-bounce`,
+  'right-bounce': `${animationCommonName}-left-right-bounce`,
 };
+
+export const crossBrowser = [
+  '@keyframes',
+  '@-webkit-keyframes',
+  '@-moz-keyframes',
+  '@-ms-keyframes',
+  '@-o-keyframes',
+];

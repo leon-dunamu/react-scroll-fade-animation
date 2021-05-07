@@ -1,6 +1,7 @@
 import ReactDOM from 'react-dom';
+import makeKeyframes from './animations/make.keyframes';
 import { animations, characters } from './constants';
-import { pathType } from '../components/ScrollAnimationItem';
+import { pathType } from './interfaces';
 
 export function generateHashStringByLength(length: number = 6) {
   let result: Array<string> = [];
@@ -17,7 +18,7 @@ export function findDivByRef(element: HTMLElement | null): HTMLDivElement {
   return ReactDOM.findDOMNode(element) as HTMLDivElement;
 }
 
-export function getAnimationType(path: 'top' | 'bottom' | 'left' | 'right') {
+export function getAnimationType(path: pathType) {
   return animations[path];
 }
 
@@ -38,52 +39,15 @@ export const endAnimation = (element: HTMLDivElement) => () => {
   element.style.opacity = '1';
 };
 
+let isCreated = false;
+
 export function createKeyframes() {
+  if (!isCreated) isCreated = true;
+  else return;
+
   const style = document.createElement('style');
   style.type = 'text/css';
-  const keyFrames = `@keyframes seog-scroll-animation-bottom-top {
-    from {
-      opacity: 0;
-      transform: translateY(120px);
-    }
-    to {
-      opacity: 1;
-      transform: none;
-    }
-  }
-
-  @keyframes seog-scroll-animation-top-bottom {
-    from {
-      opacity: 0;
-      transform: translateY(-120px);
-    }
-    to {
-      opacity: 1;
-      transform: none;
-    }
-  }
-
-  @keyframes seog-scroll-animation-right-left {
-    from {
-      opacity: 0;
-      transform: translateX(200px);
-    }
-    to {
-      opacity: 1;
-      transform: none;
-    }
-  }
-
-  @keyframes seog-scroll-animation-left-right {
-    from {
-      opacity: 0;
-      transform: translateX(-200px);
-    }
-    to {
-      opacity: 1;
-      transform: none;
-    }
-  }`;
+  const keyFrames = makeKeyframes();
   style.innerHTML = keyFrames;
   document.getElementsByTagName('head')[0].appendChild(style);
 }

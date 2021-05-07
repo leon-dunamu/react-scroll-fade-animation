@@ -9,16 +9,7 @@ import {
   setAnimation,
 } from '../utils/functions';
 import { basicClassName } from '../utils/constants';
-
-export type pathType = 'top' | 'bottom' | 'left' | 'right';
-
-interface ScrollAnimationItemProps {
-  children: React.ReactNode;
-  style?: React.CSSProperties;
-  delay?: number;
-  duration?: number;
-  path: pathType;
-}
+import { ScrollAnimationItemProps } from '../utils/interfaces';
 
 export default function ScrollAnimationItem({
   children,
@@ -38,9 +29,8 @@ export default function ScrollAnimationItem({
       top: elementTopPosition,
       height: elementHeight,
     } = element.getBoundingClientRect() as ClientRect;
-    const scrollTopPosition = window.scrollY + (window.innerHeight - elementHeight) / 2;
 
-    if (scrollTopPosition > elementTopPosition) {
+    if ((window.innerHeight + elementHeight) / 2 > elementTopPosition) {
       setAnimation(element, duration, delay, path);
       setTimeout(endAnimation(element), duration);
       window.removeEventListener('scroll', onScroll);
@@ -69,4 +59,5 @@ const styles: React.CSSProperties = {
   width: '100%',
   height: '200px',
   opacity: '0',
+  border: '1px solid green',
 };
