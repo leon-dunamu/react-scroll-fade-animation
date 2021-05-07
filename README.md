@@ -6,14 +6,18 @@ It is made with `Hooks` from `React-Typescript`.
 
 You can use this with several animations by SIMPLE CODES.
 
-## 👀 Providing Animations (will be updated for more functions later)
+## 👀 Provide Animations (will be updated for more functions later)
 
-* Fade Bottom to Top ⬆️
-* Fade Top to Bottom ⬇️
-* Fade Left to Right ➡️
-* Fade Right to Left ⬅️
+* `Fade` Bottom to Top ⬆️
+* `Fade` Top to Bottom ⬇️
+* `Fade` Left to Right ➡️
+* `Fade` Right to Left ⬅️
+* `Fade & Bounce` Bottom to Top ⬆️
+* `Fade & Bounce` Top to Bottom ⬇️
+* `Fade & Bounce` Left to Right ➡️
+* `Fade & Bounce` Right to Left ⬅️
 
-Other functions are added later! (bouncing ... etc)
+Other functions are added later!
 
 ## 💡 HOW TO USE
 
@@ -42,7 +46,7 @@ export default function App() {
       }}>top blank</div>
 
       {/* This Element shows on Scroll */}
-      <ScrollAnimationItem path={'bottom'}>
+      <ScrollAnimationItem path={'bottom-bounce'}>
         {/* Insert Your Item ! */}
       </ScrollAnimationItem>
 
@@ -63,7 +67,7 @@ But you can custom `Duration`, `Delay` and `Wrapper Style`.
 
 | Prop Name | Required | Default Value | Type | Description |
 |:---:|:---:|:---:|:---:|:---:|
-|path|O|top|string|You can chose `'top','bottom','left','right' (low cases)`. It means appearance direction [example of 'top', it shows 'bottom' 👉 'top']|
+|path|O|top|string|You can choose `'top','bottom','left','right','top-bounce','bottom-bounce','left-bounce','right-bounce' (low cases)`. It means appearance direction [example of 'top', it shows 'bottom' 👉 'top']|
 |delay|X|0|number|Milliseconds|
 |duration|X|1200|number|Milliseconds|
 |style|X|{ }|React.CSSProperties|Camel-case inline style, The Wrapper Component's style|
@@ -92,3 +96,7 @@ export const ScrollWrapper = ({itemList}) => (<>
 </ScrollItem>);
 
 ```
+
+## Contribute
+
+If you have a nice idea or something to modify codes or bugs, you can make `Issue` or `Pull Request` everytime!
