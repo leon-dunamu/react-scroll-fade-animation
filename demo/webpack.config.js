@@ -61,7 +61,7 @@ module.exports = {
                 },
               },
             ],
-            isDevelopment && 'react-refresh/babel',
+            isDevelopment && require.resolve('react-refresh/babel'),
           ].filter(Boolean),
         },
       },
