@@ -31,7 +31,7 @@
     "noUnusedParameters": true
   },
   "include": [
-    "demo/src/ScrollAnimation"
+    "src"
   ],
   "exclude": [
     "node_modules",

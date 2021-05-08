@@ -6,8 +6,14 @@
     "react",
     "scroll",
     "animation",
-    "keyframes"
+    "keyframes",
+    "reactJS",
+    "react-component",
+    "reactScrollFadeAnimation"
   ],
+  "scripts": {
+    "test": "jest --config=jest.config.js"
+  },
   "homepage": "https://github.com/1seok2/react-scroll-fade-animation",
   "bugs": {
     "url": "https://github.com/1seok2/react-scroll-fade-animation/issues",
@@ -24,9 +30,27 @@
     "type": "git",
     "url": "https://github.com/1seok2/react-scroll-fade-animation.git"
   },
-  "dependencies": {
+  "peerDependencies": {
+    "react": ">= 15.4.1 < 17.0.0-0",
+    "react-dom": ">= 15.4.1 < 17.0.0-0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.14.1",
+    "@babel/preset-typescript": "^7.13.0",
+    "@testing-library/jest-dom": "^5.12.0",
+    "@testing-library/react": "^11.2.6",
+    "@types/enzyme": "^3.10.8",
+    "@types/jest": "^26.0.23",
+    "@types/react": "^17.0.5",
+    "@types/react-dom": "^17.0.3",
+    "@types/react-test-renderer": "^17.0.1",
+    "babel-jest": "^26.6.3",
+    "enzyme": "^3.11.0",
+    "jest": "^26.6.3",
     "react": "^17.0.0",
-    "react-dom": "^17.0.0"
+    "react-dom": "^17.0.0",
+    "react-test-renderer": "^17.0.2",
+    "ts-jest": "^26.5.6"
   },
   "browserslist": {
     "production": [
@@ -38,6 +62,20 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
     ]
   }
 }

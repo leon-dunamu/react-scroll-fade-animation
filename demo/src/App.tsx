@@ -1,7 +1,10 @@
 import React from 'react';
 
-import ScrollAnimationItem from './ScrollAnimation';
-// import ScrollAnimationItem from 'react-scroll-fade-animation';
+import ScrollAnimationItem from 'react-scroll-fade-animation';
+
+const code = `
+  
+`;
 
 function App() {
   return (

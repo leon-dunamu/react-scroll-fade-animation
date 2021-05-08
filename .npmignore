@@ -8,6 +8,11 @@ src
 .gitignore
 rollup.config.js
 tsconfig.json
+.prettierrc.js
+
+# test
+jest.config.js
+.babel.config.jest
 
 *.js.map
 
