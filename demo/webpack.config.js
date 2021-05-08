@@ -8,11 +8,6 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 const isDevelopment = process.env.NODE_ENV === 'development';
 const webpack = require('webpack');
 
-console.log('hihihi');
-console.log(isDevelopment, process.env.NODE_ENV);
-console.log('hihihi');
-console.log('hihihi');
-
 module.exports = {
   mode: isDevelopment ? 'development' : 'production',
   target: process.env.NODE_ENV === 'development' ? 'web' : 'browserslist',
