@@ -1,21 +1,18 @@
 import React from 'react';
-
-import ScrollAnimationItem from 'react-scroll-fade-animation';
-
-const code = `
-  
-`;
+import './App.css';
 
 function App() {
   return (
-    <div>
-      <div style={{ height: '100vh', border: '1px solid gray' }}>dd</div>
-      <ScrollAnimationItem path={'top-bounce'}>top-bounce</ScrollAnimationItem>
-      <ScrollAnimationItem path={'left-bounce'}>left-bounce</ScrollAnimationItem>
-      <ScrollAnimationItem path={'right-bounce'}>right-bounce</ScrollAnimationItem>
-      <ScrollAnimationItem path={'bottom-bounce'}>bottom-bounce</ScrollAnimationItem>
-      <ScrollAnimationItem path={'top'}>top</ScrollAnimationItem>
-      <div style={{ height: '100vh', border: '1px solid gray' }}>dd</div>
+    <div
+      style={{
+        display: 'flex',
+        height: '100%',
+        justifyContent: 'center',
+        alignItems: 'center',
+        fontSize: '24px',
+      }}
+    >
+      Customize Your React App!
     </div>
   );
 }
