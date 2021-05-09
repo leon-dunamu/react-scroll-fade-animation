@@ -1,3 +1,5 @@
+import React from 'react';
+
 export type pathType =
   | 'top'
   | 'bottom'
@@ -6,12 +8,16 @@ export type pathType =
   | 'top-bounce'
   | 'bottom-bounce'
   | 'left-bounce'
-  | 'right-bounce';
+  | 'right-bounce'
+  | string;
 
-export interface ScrollAnimationItemProps {
-  children: React.ReactNode;
+export interface ScrollAnimationItemProps extends React.HTMLProps<HTMLDivElement> {
+  path: pathType;
+  children?: React.ReactNode;
   style?: React.CSSProperties;
   delay?: number;
   duration?: number;
-  path: pathType;
+  className?: string;
+  offsetHeight?: number;
+  reAnimate?: boolean;
 }

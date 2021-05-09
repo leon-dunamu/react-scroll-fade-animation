@@ -1,12 +1,13 @@
 // import './Scroll.css';
-
+import '../styles/index.css';
 import React from 'react';
 import {
   createKeyframes,
-  endAnimation,
+  setShowAnimation,
+  endShowAnimation,
   findDivByRef,
   generateHashStringByLength,
-  setAnimation,
+  endHideAnimation,
 } from '../utils/functions';
 import { basicClassName } from '../utils/constants';
 import { ScrollAnimationItemProps } from '../utils/interfaces';
@@ -16,12 +17,16 @@ export default function ScrollAnimationItem({
   delay = 0,
   duration = 1200,
   path = 'top',
+  className,
+  offsetHeight = 0,
+  reAnimate = false,
   ...rest
 }: ScrollAnimationItemProps) {
+  const [showed, setShowed] = React.useState(false);
   const ref = React.useRef<HTMLDivElement>(null);
 
   const hashClassName = generateHashStringByLength(5);
-  const className = `${basicClassName} ssa-${hashClassName}`;
+  const newClassName = `${className || basicClassName} ssa-${hashClassName}`;
 
   function onScroll() {
     const element = findDivByRef(ref.current);
@@ -30,10 +35,21 @@ export default function ScrollAnimationItem({
       height: elementHeight,
     } = element.getBoundingClientRect() as ClientRect;
 
-    if ((window.innerHeight + elementHeight) / 2 > elementTopPosition) {
-      setAnimation(element, duration, delay, path);
-      setTimeout(endAnimation(element), duration);
-      window.removeEventListener('scroll', onScroll);
+    if (
+      !showed &&
+      (window.innerHeight + elementHeight) / 2 + offsetHeight > elementTopPosition
+    ) {
+      setShowAnimation(element, duration, delay, path);
+      setTimeout(endShowAnimation(element), duration);
+
+      reAnimate && setShowed(true);
+      reAnimate || window.removeEventListener('scroll', onScroll);
+    } else if (
+      showed &&
+      (window.innerHeight + elementHeight) / 2 + offsetHeight < elementTopPosition
+    ) {
+      endHideAnimation(element);
+      setShowed(false);
     }
   }
 
@@ -43,21 +59,18 @@ export default function ScrollAnimationItem({
 
   React.useEffect(function () {
     window.addEventListener('scroll', onScroll);
+    onScroll();
 
     return () => window.removeEventListener('scroll', onScroll);
   });
 
   return (
-    <div className={className} style={styles} ref={ref} {...rest}>
+    <div className={newClassName} style={styles} ref={ref} {...rest}>
       {children}
     </div>
   );
 }
 
 const styles: React.CSSProperties = {
-  position: 'relative',
-  width: '100%',
-  height: '200px',
-  opacity: '0',
-  border: '1px solid green',
+  opacity: 0,
 };

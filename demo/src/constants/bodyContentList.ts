@@ -18,7 +18,11 @@ export const bodyContentList = [
 import ScrollAnimationItem from 'react-scroll-fade-animation';
 
 export default function Item() {
-  return <ScrollAnimationItem path={'top'}>
+  return <ScrollAnimationItem
+    path={'top'}
+    offsetHeight={-400}
+    reAnimate={true}
+  >
     Its top
   </ScrollAnimationItem>
 }
@@ -32,7 +36,11 @@ export default function Item() {
 import ScrollAnimationItem from 'react-scroll-fade-animation';
 
 export default function Item() {
-  return <ScrollAnimationItem path={'bottom'}>
+  return <ScrollAnimationItem
+    path={'bottom'}
+    offsetHeight={-400}
+    reAnimate={true}
+  >
     Its bottom
   </ScrollAnimationItem>
 }
@@ -46,7 +54,11 @@ export default function Item() {
 import ScrollAnimationItem from 'react-scroll-fade-animation';
 
 export default function Item() {
-  return <ScrollAnimationItem path={'left'}>
+  return <ScrollAnimationItem
+    path={'left'}
+    offsetHeight={-400}
+    reAnimate={true}
+  >
     Its left
   </ScrollAnimationItem>
 }
@@ -60,7 +72,11 @@ export default function Item() {
 import ScrollAnimationItem from 'react-scroll-fade-animation';
 
 export default function Item() {
-  return <ScrollAnimationItem path={'right'}>
+  return <ScrollAnimationItem
+    path={'right'}
+    offsetHeight={-400}
+    reAnimate={true}
+  >
     Its right
   </ScrollAnimationItem>
 }
@@ -74,7 +90,11 @@ export default function Item() {
 import ScrollAnimationItem from 'react-scroll-fade-animation';
 
 export default function Item() {
-  return <ScrollAnimationItem path={'top-bounce'}>
+  return <ScrollAnimationItem
+    path={'top-bounce'}
+    offsetHeight={-400}
+    reAnimate={true}
+  >
     Its top-bounce
   </ScrollAnimationItem>
 }
@@ -88,7 +108,11 @@ export default function Item() {
 import ScrollAnimationItem from 'react-scroll-fade-animation';
 
 export default function Item() {
-  return <ScrollAnimationItem path={'bottom'}>
+  return <ScrollAnimationItem
+    path={'bottom'}
+    offsetHeight={-400}
+    reAnimate={true}
+  >
     Its bottom-bounce
   </ScrollAnimationItem>
 }
@@ -102,7 +126,11 @@ export default function Item() {
 import ScrollAnimationItem from 'react-scroll-fade-animation';
 
 export default function Item() {
-  return <ScrollAnimationItem path={'left'}>
+  return <ScrollAnimationItem
+    path={'left'}
+    offsetHeight={-400}
+    reAnimate={true}
+  >
     Its left-bounce
   </ScrollAnimationItem>
 }
@@ -116,7 +144,11 @@ export default function Item() {
 import ScrollAnimationItem from 'react-scroll-fade-animation';
 
 export default function Item() {
-  return <ScrollAnimationItem path={'right'}>
+  return <ScrollAnimationItem
+    path={'right'}
+    offsetHeight={-400}
+    reAnimate={true}
+  >
     Its right-bounce
   </ScrollAnimationItem>
 }

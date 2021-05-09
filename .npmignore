@@ -2,6 +2,7 @@
 node_modules
 demo
 test
+__test__
 
 # dev
 src

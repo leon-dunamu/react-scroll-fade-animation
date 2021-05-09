@@ -24,7 +24,7 @@ export function getAnimationType(path: pathType) {
 
 const makeTimeToMillisecondString = (number: number) => `${number}ms`;
 
-export function setAnimation(
+export function setShowAnimation(
   element: HTMLDivElement,
   duration: number,
   delay: number,
@@ -35,8 +35,25 @@ export function setAnimation(
   element.style.animationName = getAnimationType(path);
 }
 
-export const endAnimation = (element: HTMLDivElement) => () => {
+export const endShowAnimation = (element: HTMLDivElement) => () => {
   element.style.opacity = '1';
+  element.style.animation = 'none';
+};
+
+export function setHideAnimation(
+  element: HTMLDivElement,
+  duration: number,
+  delay: number,
+  path: pathType,
+) {
+  element.style.animationDuration = makeTimeToMillisecondString(duration);
+  element.style.animationDelay = makeTimeToMillisecondString(delay);
+  element.style.animationName = getAnimationType(path);
+  element.style.animationDirection = 'reverse';
+}
+
+export const endHideAnimation = (element: HTMLDivElement) => {
+  element.style.opacity = '0';
 };
 
 let isCreated = false;
