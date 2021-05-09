@@ -39,8 +39,8 @@ export default function ScrollAnimationItem({
       !showed &&
       (window.innerHeight + elementHeight) / 2 + offsetHeight > elementTopPosition
     ) {
+      setTimeout(endShowAnimation(element), duration - 10);
       setShowAnimation(element, duration, delay, path);
-      setTimeout(endShowAnimation(element), duration);
 
       reAnimate && setShowed(true);
       reAnimate || window.removeEventListener('scroll', onScroll);
