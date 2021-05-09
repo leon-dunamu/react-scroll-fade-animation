@@ -1,8 +1,8 @@
 import React from 'react';
-import Prism from 'prismjs';
-import { BodyContentItemProps } from './Body';
 
+import { BodyContentItemProps } from './Body';
 import ScrollFadeAnimationItem from 'react-scroll-fade-animation';
+import PrismCode from 'src/components/PrismCode';
 
 export default function BodyContent({
   title,
@@ -11,10 +11,6 @@ export default function BodyContent({
   id,
   type,
 }: BodyContentItemProps) {
-  React.useEffect(() => {
-    Prism.highlightAll();
-  }, []);
-
   return (
     <div className={'body-content'}>
       <ScrollFadeAnimationItem
@@ -30,11 +26,7 @@ export default function BodyContent({
             {desc}
           </div>
         ))}
-        <pre>
-          <code className={`language-${type ? type : 'js'}`}>
-            {code.trim()}
-          </code>
-        </pre>
+        <PrismCode code={code} type={type} />
       </ScrollFadeAnimationItem>
     </div>
   );

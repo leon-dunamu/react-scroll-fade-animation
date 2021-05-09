@@ -3,7 +3,7 @@ export const bodyContentList = [
     title: 'REACT SCROLL FADE ANIMATION',
     description: [
       'Use on Scroll Animation Item in ReactJS.',
-      'If Item exists in middle of Viewport, it will appear !',
+      'If Item exists in Viewport, it will be displayed!',
     ],
     code: `
       npm install react-scroll-fade-animation

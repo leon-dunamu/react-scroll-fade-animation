@@ -1,0 +1,38 @@
+.modal-container {
+  position: fixed;
+  bottom: 2rem;
+  z-index: 2;
+
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 6px 18px;
+
+  background-color: #fff;
+  border-radius: 24px;
+
+  span {
+    margin-left: 16px;
+  }
+}
+
+@keyframes modal-show-animation {
+  0% {
+    opacity: 0;
+    bottom: -5rem;
+  }
+  30% {
+    opacity: 1;
+    bottom: 2rem;
+  }
+  70% {
+    opacity: 1;
+    bottom: 2rem;
+  }
+  100% {
+    opacity: 0;
+    bottom: -5rem;
+  }
+}

@@ -1,6 +1,7 @@
 import 'src/styles/App.scss';
 import 'src/styles/Sidebar.scss';
 import 'src/styles/Body.scss';
+import 'src/styles/Modal.scss';
 
 import 'src/assets/prism.css';
 
