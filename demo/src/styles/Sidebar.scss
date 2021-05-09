@@ -7,9 +7,9 @@
   min-width: 260px;
   min-height: 100vh;
 
-  background-color: #0d4e40;
+  background-color: #071955;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 900px) {
     display: none;
   }
 
@@ -57,19 +57,56 @@
 
     li {
       margin: 4px 10px 10px 20px;
-      // margin-left: 20px;
+      padding: 2px 8px;
 
       font-size: 22px;
       font-weight: 400;
       color: #dfdfdf;
 
-      transition: color 1.2s;
+      background-color: rgba($color: #000000, $alpha: 0);
+
+      border-radius: 6px;
+
+      transition: background-color color 1.2s;
 
       &.focus-item {
         color: #ffeaa7;
         font-weight: 600;
         transition: color 1.2s;
       }
+
+      &:hover {
+        background-color: rgb(66, 102, 149);
+
+        transition: background-color 0.4s;
+      }
     }
+  }
+}
+
+.btn-to-top {
+  position: fixed;
+  bottom: 1.6rem;
+  right: 1.6rem;
+
+  height: 64px;
+  width: 64px;
+
+  border-radius: 50%;
+  border: none;
+
+  background-color: #071955;
+  transition: background-color 0.3s;
+
+  color: #eaeaea;
+  font-size: 24px;
+
+  @media screen and (min-width: 901px) {
+    display: none;
+  }
+
+  &:hover {
+    background-color: rgba(7, 25, 85, 0.55);
+    transition: background-color 0.3s;
   }
 }
