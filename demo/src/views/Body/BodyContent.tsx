@@ -1,4 +1,5 @@
 import React from 'react';
+import Prism from 'prismjs';
 import { BodyContentItemProps } from './Body';
 
 export default function BodyContent({
@@ -6,9 +7,14 @@ export default function BodyContent({
   description,
   code,
   id,
+  type,
 }: BodyContentItemProps) {
+  React.useEffect(() => {
+    Prism.highlightAll();
+  }, []);
+
   return (
-    <div id={`rsfa-${id}`} className="body-content">
+    <div id={`rsfa-${id}`} className={'body-content'}>
       <h1>{title}</h1>
       {description.map((desc: string) => (
         <div key={desc} className={'body-content-desc'}>
@@ -16,7 +22,7 @@ export default function BodyContent({
         </div>
       ))}
       <pre>
-        <code>{code}</code>
+        <code className={`language-${type ? type : 'js'}`}>{code.trim()}</code>
       </pre>
     </div>
   );

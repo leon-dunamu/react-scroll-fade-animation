@@ -18,7 +18,7 @@ export default function SidebarContentList() {
 
   return (
     <ul className={'side-bar-content'}>
-      <h2>ANIMATION LIST</h2>
+      <h2>🖱 ANIMATION LIST</h2>
       {animationList.map((animationTitle: string) => (
         <li key={animationTitle} id={animationTitle} onClick={onClick}>
           {animationTitle}

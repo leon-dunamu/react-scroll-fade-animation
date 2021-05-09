@@ -9,5 +9,24 @@
     align-items: center;
 
     height: 80vh;
+
+    background-color: rgba(108, 225, 191, 0.3);
+
+    h1 {
+      margin-bottom: 30px;
+
+      font-size: 40px;
+    }
+
+    div {
+      margin-bottom: 16px;
+
+      font-size: 25px;
+      text-align: left;
+    }
+
+    pre {
+      min-width: 500px;
+    }
   }
 }

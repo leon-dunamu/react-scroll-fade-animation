@@ -2,6 +2,8 @@ import 'src/styles/App.scss';
 import 'src/styles/Sidebar.scss';
 import 'src/styles/Body.scss';
 
+import 'src/assets/prism.css';
+
 import React from 'react';
 
 import Body from './views/Body';

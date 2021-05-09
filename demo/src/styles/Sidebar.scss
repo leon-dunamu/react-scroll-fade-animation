@@ -4,10 +4,10 @@
   left: 0;
 
   flex: 1;
-  min-width: 240px;
+  min-width: 260px;
   min-height: 100vh;
 
-  background-color: rgba(108, 225, 191, 0.3);
+  background-color: #0d4e40;
 
   @media screen and (max-width: 768px) {
     display: none;
@@ -27,7 +27,7 @@
       margin: 0;
       padding: 0;
 
-      color: #666;
+      color: #eaeaea;
 
       &:first-child {
         margin: 12px;
@@ -50,20 +50,23 @@
 
     h2 {
       margin-bottom: 10px;
-      font-weight: 500;
+
+      font-weight: 700;
+      color: #dfdfdf;
     }
 
     li {
-      margin: 4px 8px;
+      margin: 4px 10px 10px 20px;
+      // margin-left: 20px;
 
       font-size: 22px;
       font-weight: 400;
-      color: #999;
+      color: #dfdfdf;
 
       transition: color 1.2s;
 
       &.focus-item {
-        color: #098868;
+        color: #ffeaa7;
         font-weight: 600;
         transition: color 1.2s;
       }
