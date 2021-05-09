@@ -1,0 +1,22 @@
+html,
+body,
+#root {
+  position: relative;
+
+  min-height: 100%;
+  margin: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+.app-container {
+  display: flex;
+  height: 100%;
+  justify-content: flex-start;
+  align-items: flex-start;
+}

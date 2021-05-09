@@ -1,20 +1,17 @@
-import React from 'react';
-import './App.css';
+import 'src/styles/App.scss';
+import 'src/styles/Sidebar.scss';
+import 'src/styles/Body.scss';
 
-function App() {
+import React from 'react';
+
+import Body from './views/Body';
+import Sidebar from './views/Sidebar';
+
+export default function App() {
   return (
-    <div
-      style={{
-        display: 'flex',
-        height: '100%',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: '24px',
-      }}
-    >
-      Customize Your React App!
+    <div className={'app-container'}>
+      <Sidebar />
+      <Body />
     </div>
   );
 }
-
-export default App;

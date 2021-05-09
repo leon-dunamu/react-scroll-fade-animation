@@ -12,7 +12,9 @@
     "reactScrollFadeAnimation"
   ],
   "scripts": {
-    "test": "jest --config=jest.config.js"
+    "test": "jest --config=jest.config.js",
+    "predeploy": "cd demo && npm run build",
+    "deploy": "git subtree push --prefix demo/dist origin gh-pages"
   },
   "homepage": "https://github.com/1seok2/react-scroll-fade-animation",
   "bugs": {

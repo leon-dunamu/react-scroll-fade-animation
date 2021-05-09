@@ -1,0 +1,13 @@
+.body-container {
+  flex: 4;
+  min-height: 100%;
+
+  .body-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 80vh;
+  }
+}

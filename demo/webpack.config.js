@@ -14,7 +14,6 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx', 'scss'],
     alias: {
-      root: __dirname,
       src: path.resolve(__dirname, 'src'),
     },
     modules: [path.join(__dirname, 'src'), 'node_modules'],
@@ -84,17 +83,19 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/dist/',
+    // publicPath: '/dist/',
+    publicPath: './',
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    publicPath: '/dist/',
+    contentBase: path.resolve(__dirname, 'dist'),
+    // publicPath: '/dist/',
+    publicPath: './',
     noInfo: true,
     port: 3000,
     hot: true,
     writeToDisk: true,
     historyApiFallback: true,
-    liveReload: true,
-    watchContentBase: true,
+    // liveReload: true,
+    // watchContentBase: true,
   },
 };

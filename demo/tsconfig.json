@@ -5,7 +5,7 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "noFallthroughCasesInSwitch": true,
-    "isolatedModules": true,
+    // "isolatedModules": true,
     "resolveJsonModule": true,
     "outDir": "dist",
     "module": "esnext",
@@ -23,7 +23,11 @@
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true
+    "noUnusedParameters": true,
+    "baseUrl": ".",
+    "paths": {
+      "*": ["*", "src/*"]
+    }
   },
   "include": ["./src/**/*"],
   "exclude": [
