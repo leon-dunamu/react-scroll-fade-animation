@@ -1,8 +1,9 @@
 import React from 'react';
 
 import { BodyContentItemProps } from './Body';
-import ScrollFadeAnimationItem from 'react-scroll-fade-animation';
+// import ScrollFadeAnimationItem from 'react-scroll-fade-animation';
 import PrismCode from 'src/components/PrismCode';
+import ScrollFadeAnimationItem from 'src/observe'
 
 export default function BodyContent({
   title,
@@ -14,10 +15,10 @@ export default function BodyContent({
   return (
     <div className={'body-content'}>
       <ScrollFadeAnimationItem
-        path={id === 'init' ? 'top' : id}
+        // path={id === 'init' ? 'right' : id}
         id={`rsfa-${id}`}
         className={'body-scroll-content'}
-        offsetHeight={-400}
+        offset={{y:100}}
         reAnimate={true}
       >
         <h1>{title}</h1>

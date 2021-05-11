@@ -47,112 +47,112 @@ export default function Item() {
     `,
     id: 'bottom',
   },
-  {
-    title: 'left',
-    description: ['Appear from right to left'],
-    code: `
-import ScrollAnimationItem from 'react-scroll-fade-animation';
+//   {
+//     title: 'left',
+//     description: ['Appear from right to left'],
+//     code: `
+// import ScrollAnimationItem from 'react-scroll-fade-animation';
 
-export default function Item() {
-  return <ScrollAnimationItem
-    path={'left'}
-    offsetHeight={-400}
-    reAnimate={true}
-  >
-    Its left
-  </ScrollAnimationItem>
-}
-    `,
-    id: 'left',
-  },
-  {
-    title: 'right',
-    description: ['Appear from left to right'],
-    code: `
-import ScrollAnimationItem from 'react-scroll-fade-animation';
+// export default function Item() {
+//   return <ScrollAnimationItem
+//     path={'left'}
+//     offsetHeight={-400}
+//     reAnimate={true}
+//   >
+//     Its left
+//   </ScrollAnimationItem>
+// }
+//     `,
+//     id: 'left',
+//   },
+//   {
+//     title: 'right',
+//     description: ['Appear from left to right'],
+//     code: `
+// import ScrollAnimationItem from 'react-scroll-fade-animation';
 
-export default function Item() {
-  return <ScrollAnimationItem
-    path={'right'}
-    offsetHeight={-400}
-    reAnimate={true}
-  >
-    Its right
-  </ScrollAnimationItem>
-}
-    `,
-    id: 'right',
-  },
-  {
-    title: 'top-bounce',
-    description: ['Bounce from bottom to top'],
-    code: `
-import ScrollAnimationItem from 'react-scroll-fade-animation';
+// export default function Item() {
+//   return <ScrollAnimationItem
+//     path={'right'}
+//     offsetHeight={-400}
+//     reAnimate={true}
+//   >
+//     Its right
+//   </ScrollAnimationItem>
+// }
+//     `,
+//     id: 'right',
+//   },
+//   {
+//     title: 'top-bounce',
+//     description: ['Bounce from bottom to top'],
+//     code: `
+// import ScrollAnimationItem from 'react-scroll-fade-animation';
 
-export default function Item() {
-  return <ScrollAnimationItem
-    path={'top-bounce'}
-    offsetHeight={-400}
-    reAnimate={true}
-  >
-    Its top-bounce
-  </ScrollAnimationItem>
-}
-    `,
-    id: 'top-bounce',
-  },
-  {
-    title: 'bottom-bounce',
-    description: ['Bounce from top to bottom'],
-    code: `
-import ScrollAnimationItem from 'react-scroll-fade-animation';
+// export default function Item() {
+//   return <ScrollAnimationItem
+//     path={'top-bounce'}
+//     offsetHeight={-400}
+//     reAnimate={true}
+//   >
+//     Its top-bounce
+//   </ScrollAnimationItem>
+// }
+//     `,
+//     id: 'top-bounce',
+//   },
+//   {
+//     title: 'bottom-bounce',
+//     description: ['Bounce from top to bottom'],
+//     code: `
+// import ScrollAnimationItem from 'react-scroll-fade-animation';
 
-export default function Item() {
-  return <ScrollAnimationItem
-    path={'bottom'}
-    offsetHeight={-400}
-    reAnimate={true}
-  >
-    Its bottom-bounce
-  </ScrollAnimationItem>
-}
-    `,
-    id: 'bottom-bounce',
-  },
-  {
-    title: 'left-bounce',
-    description: ['Bounce from right to left'],
-    code: `
-import ScrollAnimationItem from 'react-scroll-fade-animation';
+// export default function Item() {
+//   return <ScrollAnimationItem
+//     path={'bottom'}
+//     offsetHeight={-400}
+//     reAnimate={true}
+//   >
+//     Its bottom-bounce
+//   </ScrollAnimationItem>
+// }
+//     `,
+//     id: 'bottom-bounce',
+//   },
+//   {
+//     title: 'left-bounce',
+//     description: ['Bounce from right to left'],
+//     code: `
+// import ScrollAnimationItem from 'react-scroll-fade-animation';
 
-export default function Item() {
-  return <ScrollAnimationItem
-    path={'left'}
-    offsetHeight={-400}
-    reAnimate={true}
-  >
-    Its left-bounce
-  </ScrollAnimationItem>
-}
-    `,
-    id: 'left-bounce',
-  },
-  {
-    title: 'right-bounce',
-    description: ['Bounce from left to right'],
-    code: `
-import ScrollAnimationItem from 'react-scroll-fade-animation';
+// export default function Item() {
+//   return <ScrollAnimationItem
+//     path={'left'}
+//     offsetHeight={-400}
+//     reAnimate={true}
+//   >
+//     Its left-bounce
+//   </ScrollAnimationItem>
+// }
+//     `,
+//     id: 'left-bounce',
+//   },
+//   {
+//     title: 'right-bounce',
+//     description: ['Bounce from left to right'],
+//     code: `
+// import ScrollAnimationItem from 'react-scroll-fade-animation';
 
-export default function Item() {
-  return <ScrollAnimationItem
-    path={'right'}
-    offsetHeight={-400}
-    reAnimate={true}
-  >
-    Its right-bounce
-  </ScrollAnimationItem>
-}
-    `,
-    id: 'right-bounce',
-  },
+// export default function Item() {
+//   return <ScrollAnimationItem
+//     path={'right'}
+//     offsetHeight={-400}
+//     reAnimate={true}
+//   >
+//     Its right-bounce
+//   </ScrollAnimationItem>
+// }
+//     `,
+//     id: 'right-bounce',
+//   },
 ];

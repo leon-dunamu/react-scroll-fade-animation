@@ -1,1 +1,1 @@
-export { default } from './components/ScrollAnimationItem';
+export { default } from './scroll';

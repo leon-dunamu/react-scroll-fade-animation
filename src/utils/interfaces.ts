@@ -12,12 +12,18 @@ export type pathType =
   | string;
 
 export interface ScrollAnimationItemProps extends React.HTMLProps<HTMLDivElement> {
-  path: pathType;
+  path?: pathType;
   children?: React.ReactNode;
   style?: React.CSSProperties;
   delay?: number;
   duration?: number;
   className?: string;
-  offsetHeight?: number;
+  offset?: {
+    x ?: number,
+    y ?: number,
+    z?: number
+  }
+  offsetHeight?:number;
   reAnimate?: boolean;
+  threshold?:Array<number> | number;
 }
