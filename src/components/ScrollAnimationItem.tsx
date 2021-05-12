@@ -1,5 +1,3 @@
-// import './Scroll.css';
-import '../styles/index.css';
 import React from 'react';
 import {
   createKeyframes,
@@ -30,10 +28,8 @@ export default function ScrollAnimationItem({
 
   function onScroll() {
     const element = findDivByRef(ref.current);
-    const {
-      top: elementTopPosition,
-      height: elementHeight,
-    } = element.getBoundingClientRect() as ClientRect;
+    const { top: elementTopPosition, height: elementHeight } =
+      element.getBoundingClientRect() as ClientRect;
 
     if (
       !showed &&
