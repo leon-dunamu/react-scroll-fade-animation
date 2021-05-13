@@ -12,6 +12,8 @@ You can use this with several animations by SIMPLE CODES.
 
 ## 👀 Provide Animations (will be updated for more functions later)
 
+### `import ScrollAnimate from 'react-scroll-fade-animation`
+
 - `Fade` Bottom to Top ⬆️
 - `Fade` Top to Bottom ⬇️
 - `Fade` Left to Right ➡️
@@ -20,6 +22,10 @@ You can use this with several animations by SIMPLE CODES.
 - `Fade & Bounce` Top to Bottom ⬇️
 - `Fade & Bounce` Left to Right ➡️
 - `Fade & Bounce` Right to Left ⬅️
+
+### `import ObserveAnimate from 'react-scroll-fade-animation/observe`
+
+- set `offset` then you can set displaying path
 
 Other functions are added later!
 
@@ -39,7 +45,7 @@ yarn add react-scroll-fade-animation
 
 ```jsx
 import React from 'react';
-import ScrollAnimationItem from 'react-scroll-fade-animation';
+import ScrollAnimate from 'react-scroll-fade-animation';
 
 export default function App() {
   return (
@@ -54,9 +60,7 @@ export default function App() {
       </div>
 
       {/* This Element shows on Scroll */}
-      <ScrollAnimationItem path={'bottom-bounce'}>
-        {/* Insert Your Item ! */}
-      </ScrollAnimationItem>
+      <ScrollAnimate path={'bottom-bounce'}>{/* Insert Your Item ! */}</ScrollAnimate>
 
       <div
         style={{
@@ -77,15 +81,33 @@ But you can custom `Duration`, `Delay` and `Wrapper Style`.
 
 ### 🏭 Props
 
-|  Prop Name   | Required | Default Value |        Type         |                                                                                                             Description                                                                                                             |
-| :----------: | :------: | :-----------: | :-----------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|     path     |    O     |      top      |       string        |                 You can choose `'top','bottom','left','right','top-bounce','bottom-bounce','left-bounce','right-bounce' (low cases)`. It means appearance direction [example of 'top', it shows 'bottom' 👉 'top']                  |
-|  className   |    X     |      ''       |       string        |                                                                                                  You can add your custom className                                                                                                  |
-|    style     |    X     |      { }      | React.CSSProperties |                                                                                       Camel-case inline style, The Wrapper Component's style                                                                                        |
-|    delay     |    X     |       0       |       number        |                                                                                                            Milliseconds                                                                                                             |
-|   duration   |    X     |     1200      |       number        |                                                                                                            Milliseconds                                                                                                             |
-| offsetHeight |    X     |       0       |       number        |       You can adjust the scroll height at which items are displayed. Both negative and positive numbers are possible. If the set value is `negative, it is displayed faster`, and if it is `positive, it is displayed later`.       |
-|  reAnimate   |    X     |     false     |       boolean       | If the setting value is `true`, the item disappears if it moves back to the top of the view. If you scroll down the screen again, the animation that shows the item works `again`. Default(`false`) is not showing animation again. |
+#### Import Scroll
+
+```jsx
+import ScrollAnimate from 'react-scroll-fade-animation';
+```
+
+|  Prop Name   | Required | Default Value |  Type   |                                                                                                             Description                                                                                                             |
+| :----------: | :------: | :-----------: | :-----: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|     path     |    X     |      top      | string  |                 You can choose `'top','bottom','left','right','top-bounce','bottom-bounce','left-bounce','right-bounce' (low cases)`. It means appearance direction [example of 'top', it shows 'bottom' 👉 'top']                  |
+|    delay     |    X     |       0       | number  |                                                                                                            Milliseconds                                                                                                             |
+|   duration   |    X     |     1200      | number  |                                                                                                            Milliseconds                                                                                                             |
+| offsetHeight |    X     |       0       | number  |       You can adjust the scroll height at which items are displayed. Both negative and positive numbers are possible. If the set value is `negative, it is displayed faster`, and if it is `positive, it is displayed later`.       |
+|  reAnimate   |    X     |     false     | boolean | If the setting value is `true`, the item disappears if it moves back to the top of the view. If you scroll down the screen again, the animation that shows the item works `again`. Default(`false`) is not showing animation again. |
+
+#### Import Observe
+
+```jsx
+import ScrollAnimate from 'react-scroll-fade-animation/observe';
+```
+
+| Prop Name | Required |    Default Value     |        Type        |                                                                                                             Description                                                                                                             |
+| :-------: | :------: | :------------------: | :----------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|   delay   |    X     |          0           |       number       |                                                                                                            Milliseconds                                                                                                             |
+| duration  |    X     |         1200         |       number       |                                                                                                            Milliseconds                                                                                                             |
+|  offset   |    X     | { x: 0, y: 0, z: 0 } |       Object       |                                                                                You can adjust the transition position at which items are displayed.                                                                                 |
+| reAnimate |    X     |        false         |      boolean       | If the setting value is `true`, the item disappears if it moves back to the top of the view. If you scroll down the screen again, the animation that shows the item works `again`. Default(`false`) is not showing animation again. |
+| threshold |    X     |         0.7          | number or number[] |                                  It refers to the percentage of the item appearing in the viewport. `0.7` means that 70% of the items wrapped in `scroll component` are displayed in the viewport.                                  |
 
 ## 🍔 Example
 
@@ -116,6 +138,8 @@ export const ScrollWrapper = ({ itemList }) => (
   </>
 );
 ```
+
+more Examples are in [DEMO](https://1seok2.github.io/react-scroll-fade-animation/)
 
 ## 🧑🏻‍💻 Contribute
 
