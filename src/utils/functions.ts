@@ -22,9 +22,21 @@ export function getAnimationType(path: pathType) {
   return animations[path];
 }
 
-const makeTimeToMillisecondString = (number: number) => `${number}ms`;
+export const makeTimeToMillisecondString = (number: number) => `${number}ms`;
 
-export function setShowAnimation(
+export function setShowObserveAnimation(
+  element: HTMLDivElement,
+  duration: number,
+  delay: number,
+) {
+  element.style.transitionProperty = 'opacity transform';
+  element.style.transitionDuration = makeTimeToMillisecondString(duration);
+  element.style.transitionDelay = makeTimeToMillisecondString(delay);
+  element.style.opacity = '1';
+  element.style.transform = `translate3d(0, 0, 0)`;
+}
+
+export function setShowScrollAnimation(
   element: HTMLDivElement,
   duration: number,
   delay: number,
@@ -35,12 +47,25 @@ export function setShowAnimation(
   element.style.animationName = getAnimationType(path);
 }
 
-export const endShowAnimation = (element: HTMLDivElement) => () => {
+export const endShowAnimation = (element: HTMLDivElement) => {
   element.style.opacity = '1';
   element.style.animation = 'none';
 };
 
-export function setHideAnimation(
+export function setHideObserveAnimation(
+  element: HTMLDivElement,
+  duration: number,
+  delay: number,
+  offset: {x?: number,y?:number,z?:number},
+) {
+  element.style.transitionProperty = 'opacity transform';
+  element.style.transitionDuration = makeTimeToMillisecondString(duration/5);
+  element.style.transitionDelay = makeTimeToMillisecondString(delay);
+  element.style.opacity = '0';
+  element.style.transform = `translate3d(${offset.x ? -offset.x : 0}px, ${offset.y ? -offset.y : 0}px, ${offset.z ? -offset.z : 0}px)`;
+}
+
+export function setHideScrollAnimation(
   element: HTMLDivElement,
   duration: number,
   delay: number,
