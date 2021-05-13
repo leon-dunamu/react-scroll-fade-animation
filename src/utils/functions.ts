@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
 import makeKeyframes from './animations/make.keyframes';
-import { animations, characters } from './constants';
+import { animations, characters, seogCSS } from './constants';
 import { pathType } from './interfaces';
 
 export function generateHashStringByLength(length: number = 6) {
@@ -90,6 +90,6 @@ export function createKeyframes() {
   const style = document.createElement('style');
   style.type = 'text/css';
   const keyFrames = makeKeyframes();
-  style.innerHTML = keyFrames;
+  style.innerHTML = seogCSS + keyFrames;
   document.getElementsByTagName('head')[0].appendChild(style);
 }

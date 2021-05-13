@@ -5,6 +5,14 @@ export const basicClassName = 'seog-scroll-animation-item';
 
 const animationCommonName = 'seog-scroll-animation';
 
+export const seogCSS = `
+.${basicClassName} {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  opacity: 0;
+}`;
+
 export const animations = {
   top: `${animationCommonName}-bottom-top`,
   bottom: `${animationCommonName}-top-bottom`,
