@@ -3,9 +3,8 @@ import '../styles/index.css';
 import React from 'react';
 import {
   createKeyframes,
-  setShowAnimation,
+  setShowScrollAnimation,
   endShowAnimation,
-  findDivByRef,
   generateHashStringByLength,
   endHideAnimation,
 } from '../utils/functions';
@@ -28,34 +27,44 @@ export default function ScrollAnimationItem({
   const hashClassName = generateHashStringByLength(5);
   const newClassName = `${className || basicClassName} ssa-${hashClassName}`;
 
-  const handleScroll : IntersectionObserverCallback= React.useCallback(function([entry]){
+  const handleScroll: IntersectionObserverCallback = React.useCallback(function ([
+    entry,
+  ]) {
     const element = ref.current as HTMLDivElement;
 
-    if(!showed && entry.isIntersecting) {
-      setShowAnimation(element, duration, delay, path)
+    if (!showed && entry.isIntersecting) {
+      setShowScrollAnimation(element, duration, delay, path);
       endShowAnimation(element);
 
-      setShowed(true)
+      setShowed(true);
     } else if (showed && reAnimate && !entry.isIntersecting) {
       endHideAnimation(element);
-      setShowed(false)
+      setShowed(false);
     }
-  },[])
+  },
+  []);
 
   React.useEffect(function () {
     createKeyframes();
   }, []);
 
-  React.useEffect(function(){
-    const {current} = ref;
+  React.useEffect(
+    function () {
+      const { current } = ref;
 
-    if (current) {
-      const observer = new IntersectionObserver(handleScroll, {threshold : offsetHeight});
-      observer.observe(current);
+      if (current) {
+        const observer = new IntersectionObserver(handleScroll, {
+          threshold: offsetHeight,
+        });
+        observer.observe(current);
 
-      return () => observer && observer.disconnect();
-    }
-  }, [handleScroll])
+        return () => observer && observer.disconnect();
+      }
+
+      return;
+    },
+    [handleScroll],
+  );
 
   return (
     <div className={newClassName} style={styles} ref={ref} {...rest}>
