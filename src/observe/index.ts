@@ -1,1 +1,1 @@
-export {default} from './ObserveScroll'
+export {default} from './ObserveAnimation'

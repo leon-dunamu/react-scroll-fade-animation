@@ -1,1 +1,1 @@
-export {default} from './ScrollAnimation'
+export {default} from './ScrollAnimationItem'

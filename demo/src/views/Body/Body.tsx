@@ -8,6 +8,8 @@ export interface BodyContentItemProps {
   code: string;
   id: string;
   type?: string;
+  WrapperComponent: React.FC<any>;
+  options?: any;
 }
 
 export default function Body() {

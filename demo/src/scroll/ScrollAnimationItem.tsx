@@ -1,12 +1,10 @@
 import React from 'react';
 import {
   createKeyframes,
-  setShowScrollAnimation,
-  // setHideScrollAnimation,
+  endShowAnimation,
   findDivByRef,
   generateHashStringByLength,
-  endHideAnimation,
-  endShowAnimation,
+  setShowScrollAnimation,
 } from '../utils/functions';
 import { basicClassName } from '../utils/constants';
 import { ScrollAnimationItemProps } from '../utils/interfaces';
@@ -18,10 +16,8 @@ export default function ScrollAnimationItem({
   path = 'top',
   className,
   offsetHeight = 0,
-  reAnimate = false,
   ...rest
 }: ScrollAnimationItemProps) {
-  const [showed, setShowed] = React.useState(false);
   const ref = React.useRef<HTMLDivElement>(null);
 
   const hashClassName = generateHashStringByLength(5);
@@ -29,24 +25,14 @@ export default function ScrollAnimationItem({
 
   function onScroll() {
     const element = findDivByRef(ref.current);
-    const { top: elementTopPosition, height: elementHeight } =
+    const { top: elementTopPosition } =
       element.getBoundingClientRect() as ClientRect;
 
-    if (
-      !showed &&
-      (window.innerHeight + elementHeight) / 2 + offsetHeight > elementTopPosition
-    ) {
+    if (window.innerHeight / 2 + offsetHeight > elementTopPosition) {
       setShowScrollAnimation(element, duration, delay, path);
-      endShowAnimation(element)
+      endShowAnimation(element, duration);
 
-      reAnimate && setShowed(true);
-      reAnimate || window.removeEventListener('scroll', onScroll);
-    } else if (
-      showed &&
-      (window.innerHeight + elementHeight) / 2 + offsetHeight < elementTopPosition
-    ) {
-      endHideAnimation(element);
-      setShowed(false);
+      window.removeEventListener('scroll', onScroll);
     }
   }
 
@@ -59,7 +45,7 @@ export default function ScrollAnimationItem({
     onScroll();
 
     return () => window.removeEventListener('scroll', onScroll);
-  });
+  }, []);
 
   return (
     <div className={newClassName} style={styles} ref={ref} {...rest}>
@@ -70,4 +56,5 @@ export default function ScrollAnimationItem({
 
 const styles: React.CSSProperties = {
   opacity: 0,
+  overflow: 'hidden',
 };

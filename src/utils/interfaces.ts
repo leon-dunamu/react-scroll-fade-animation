@@ -11,19 +11,29 @@ export type pathType =
   | 'right-bounce'
   | string;
 
-export interface ScrollAnimationItemProps extends React.HTMLProps<HTMLDivElement> {
-  path?: pathType;
+export interface ScrollAnimationItemProps
+  extends React.HTMLProps<HTMLDivElement> {
+  path: pathType;
   children?: React.ReactNode;
   style?: React.CSSProperties;
   delay?: number;
   duration?: number;
   className?: string;
+  offsetHeight?: number;
+}
+
+export interface ObserveAnimationItemProps
+  extends React.HTMLProps<HTMLDivElement> {
+  children?: React.ReactNode;
+  delay?: number;
+  duration?: number;
+  className?: string;
+  style?: React.CSSProperties;
   offset?: {
-    x ?: number,
-    y ?: number,
-    z?: number
-  }
-  offsetHeight?:number;
+    x?: number;
+    y?: number;
+    z?: number;
+  };
   reAnimate?: boolean;
-  threshold?:Array<number> | number;
+  threshold?: Array<number> | number;
 }

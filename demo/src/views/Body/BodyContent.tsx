@@ -3,7 +3,8 @@ import React from 'react';
 import { BodyContentItemProps } from './Body';
 // import ScrollFadeAnimationItem from 'react-scroll-fade-animation';
 import PrismCode from 'src/components/PrismCode';
-import ScrollFadeAnimationItem from 'src/observe'
+// import ScrollFadeAnimationItem from 'src/observe';
+// import ScrollFadeAnimationItem from 'src/scroll';
 
 export default function BodyContent({
   title,
@@ -11,15 +12,15 @@ export default function BodyContent({
   code,
   id,
   type,
+  WrapperComponent,
+  options,
 }: BodyContentItemProps) {
   return (
     <div className={'body-content'}>
-      <ScrollFadeAnimationItem
-        // path={id === 'init' ? 'right' : id}
+      <WrapperComponent
         id={`rsfa-${id}`}
         className={'body-scroll-content'}
-        offset={{y:100}}
-        reAnimate={true}
+        {...options}
       >
         <h1>{title}</h1>
         {description.map((desc: string) => (
@@ -28,7 +29,7 @@ export default function BodyContent({
           </div>
         ))}
         <PrismCode code={code} type={type} />
-      </ScrollFadeAnimationItem>
+      </WrapperComponent>
     </div>
   );
 }

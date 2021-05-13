@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
 import makeKeyframes from './animations/make.keyframes';
-import { animations, characters, seogCSS } from './constants';
+import { animations, characters } from './constants';
 import { pathType } from './interfaces';
 
 export function generateHashStringByLength(length: number = 6) {
@@ -8,7 +8,9 @@ export function generateHashStringByLength(length: number = 6) {
   const charactersLength = characters.length;
 
   for (let i = 0; i < length; i++) {
-    result.push(characters.charAt(Math.floor(Math.random() * charactersLength)));
+    result.push(
+      characters.charAt(Math.floor(Math.random() * charactersLength)),
+    );
   }
 
   return result.join('');
@@ -47,22 +49,27 @@ export function setShowScrollAnimation(
   element.style.animationName = getAnimationType(path);
 }
 
-export const endShowAnimation = (element: HTMLDivElement) => {
+export const endShowAnimation = (element: HTMLDivElement, duration: number) => {
   element.style.opacity = '1';
-  element.style.animation = 'none';
+
+  setTimeout(() => {
+    element.style.animation = 'none';
+  }, duration);
 };
 
 export function setHideObserveAnimation(
   element: HTMLDivElement,
   duration: number,
   delay: number,
-  offset: {x?: number,y?:number,z?:number},
+  offset: { x?: number; y?: number; z?: number },
 ) {
   element.style.transitionProperty = 'opacity transform';
-  element.style.transitionDuration = makeTimeToMillisecondString(duration/5);
+  element.style.transitionDuration = makeTimeToMillisecondString(duration / 5);
   element.style.transitionDelay = makeTimeToMillisecondString(delay);
   element.style.opacity = '0';
-  element.style.transform = `translate3d(${offset.x ? -offset.x : 0}px, ${offset.y ? -offset.y : 0}px, ${offset.z ? -offset.z : 0}px)`;
+  element.style.transform = `translate3d(${offset.x ? -offset.x : 0}px, ${
+    offset.y ? -offset.y : 0
+  }px, ${offset.z ? -offset.z : 0}px)`;
 }
 
 export function setHideScrollAnimation(
@@ -71,14 +78,18 @@ export function setHideScrollAnimation(
   delay: number,
   path: pathType,
 ) {
-  element.style.animationDuration = makeTimeToMillisecondString(duration);
+  element.style.animationDuration = makeTimeToMillisecondString(duration / 3);
   element.style.animationDelay = makeTimeToMillisecondString(delay);
   element.style.animationName = getAnimationType(path);
   element.style.animationDirection = 'reverse';
 }
 
-export const endHideAnimation = (element: HTMLDivElement) => {
+export const endHideAnimation = (element: HTMLDivElement, duration: number) => {
   element.style.opacity = '0';
+
+  setTimeout(() => {
+    element.style.animation = 'none';
+  }, duration / 3);
 };
 
 let isCreated = false;
@@ -90,6 +101,6 @@ export function createKeyframes() {
   const style = document.createElement('style');
   style.type = 'text/css';
   const keyFrames = makeKeyframes();
-  style.innerHTML = seogCSS + keyFrames;
+  style.innerHTML = keyFrames;
   document.getElementsByTagName('head')[0].appendChild(style);
 }
