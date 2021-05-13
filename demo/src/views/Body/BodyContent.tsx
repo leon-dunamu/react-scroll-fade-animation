@@ -1,10 +1,7 @@
 import React from 'react';
 
 import { BodyContentItemProps } from './Body';
-// import ScrollFadeAnimationItem from 'react-scroll-fade-animation';
 import PrismCode from 'src/components/PrismCode';
-// import ScrollFadeAnimationItem from 'src/observe';
-// import ScrollFadeAnimationItem from 'src/scroll';
 
 export default function BodyContent({
   title,

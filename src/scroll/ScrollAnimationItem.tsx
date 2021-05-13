@@ -25,13 +25,9 @@ export default function ScrollAnimationItem({
 
   function onScroll() {
     const element = findDivByRef(ref.current);
-    const { top: elementTopPosition, height: elementHeight } =
-      element.getBoundingClientRect() as ClientRect;
+    const { top: elementTopPosition } = element.getBoundingClientRect() as ClientRect;
 
-    if (
-      (window.innerHeight + elementHeight) / 2 + offsetHeight >
-      elementTopPosition
-    ) {
+    if (window.innerHeight / 2 + offsetHeight > elementTopPosition) {
       setShowScrollAnimation(element, duration, delay, path);
       endShowAnimation(element, duration);
 
@@ -59,4 +55,5 @@ export default function ScrollAnimationItem({
 
 const styles: React.CSSProperties = {
   opacity: 0,
+  overflow: 'hidden',
 };

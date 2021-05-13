@@ -1,5 +1,8 @@
-import ScrollAnimate from 'src/scroll';
-import ObserveAnimate from 'src/observe';
+// import ScrollAnimate from 'src/scroll';
+// import ObserveAnimate from 'src/observe';
+
+import ScrollAnimate from 'react-scroll-fade-animation';
+import ObserveAnimate from 'react-scroll-fade-animation/observe';
 
 export const bodyContentList = [
   {

@@ -1,6 +1,6 @@
 {
   "name": "react-scroll-fade-animation",
-  "version": "0.4.8",
+  "version": "0.5.2",
   "description": "react scroll fade animation component",
   "keywords": [
     "react",
@@ -16,7 +16,7 @@
     "predeploy": "cd demo && npm run build",
     "deploy": "git subtree push --prefix demo/dist origin gh-pages"
   },
-  "homepage": "https://github.com/1seok2/react-scroll-fade-animation",
+  "homepage": "https://1seok2.github.io/react-scroll-fade-animation",
   "bugs": {
     "url": "https://github.com/1seok2/react-scroll-fade-animation/issues",
     "email": "unos@khu.ac.kr"

@@ -12,6 +12,12 @@ src/__test__/__snapshots__
 
 # production
 build
+/observe
+/scroll
+/utils
+/index.d.ts
+/index.js
+/index.js.map
 
 # misc
 .DS_Store

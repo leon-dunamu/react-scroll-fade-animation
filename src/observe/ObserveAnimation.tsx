@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  setHideObserveAnimation,
-  setShowObserveAnimation,
-} from '../utils/functions';
+import { setHideObserveAnimation, setShowObserveAnimation } from '../utils/functions';
 import { basicClassName } from '../utils/constants';
 import { ObserveAnimationItemProps } from '../utils/interfaces';
 
@@ -41,12 +38,7 @@ export default function ScrollAnimationItem({
             setShowed(true);
           }, duration / 2);
         }
-      } else if (
-        currentY > previous.y &&
-        !isIntersecting &&
-        showed &&
-        reAnimate
-      ) {
+      } else if (currentY > previous.y && !isIntersecting && showed && reAnimate) {
         if (currentRatio < previous.ratio) {
           setHideObserveAnimation(element, duration, delay, offset);
           setTimeout(() => {
@@ -55,11 +47,13 @@ export default function ScrollAnimationItem({
         }
       }
 
-      if (previous.y != currentY && previous.ratio != currentRatio) {
-        setPrevious({
-          y: currentY,
-          ratio: currentRatio,
-        });
+      if (!showed || (showed && reAnimate)) {
+        if (previous.y != currentY && previous.ratio != currentRatio) {
+          setPrevious({
+            y: currentY,
+            ratio: currentRatio,
+          });
+        }
       }
     },
     [previous, showed],
@@ -96,6 +90,7 @@ function useStyles({
 }): React.CSSProperties {
   return {
     opacity: 0,
+    overflow: 'hidden',
     transform: `translate3d(${-x}px, ${-y}px, ${-z}px)`,
   };
 }
