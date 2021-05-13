@@ -205,7 +205,7 @@ export default function Item() {
   </ObserveAnimationItem>
 }
     `,
-    id: 'observe',
+    id: 'offset',
     WrapperComponent: ObserveAnimate,
     options: {
       offset: {
@@ -228,7 +228,7 @@ export default function Item() {
   </ObserveAnimationItem>
 }
     `,
-    id: 'observe',
+    id: 'reAnimate',
     WrapperComponent: ObserveAnimate,
     options: {
       reAnimate: true,
@@ -249,7 +249,7 @@ export default function Item() {
   </ScrollAnimationItem>
 }
     `,
-    id: 'observe',
+    id: 'duration',
     WrapperComponent: ObserveAnimate,
     options: {
       offset: {
@@ -275,7 +275,7 @@ export default function Item() {
   </ScrollAnimationItem>
 }
     `,
-    id: 'observe',
+    id: 'custom',
     WrapperComponent: ObserveAnimate,
     options: {
       offset: {

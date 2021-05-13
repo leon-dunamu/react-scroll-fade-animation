@@ -6,6 +6,11 @@ import {
 } from 'src/components/functions';
 import { animationList } from 'src/constants/animationList';
 
+interface ListType {
+  title: string;
+  list: string[];
+}
+
 export default function SidebarContentList() {
   const onClick: React.MouseEventHandler<HTMLLIElement> = (e) => {
     removeClassName('focus-item');
@@ -18,12 +23,18 @@ export default function SidebarContentList() {
 
   return (
     <ul className={'side-bar-content'}>
-      <h2>🖱 ANIMATION LIST</h2>
-      {animationList.map((animationTitle: string) => (
-        <li key={animationTitle} id={animationTitle} onClick={onClick}>
-          {animationTitle}
-        </li>
-      ))}
+      {animationList.map(({ title, list }: ListType) => {
+        return (
+          <ul key={title}>
+            <h2>{title}</h2>
+            {list.map((subtitle: string) => (
+              <li key={subtitle} id={subtitle} onClick={onClick}>
+                {subtitle}
+              </li>
+            ))}
+          </ul>
+        );
+      })}
     </ul>
   );
 }
