@@ -1,5 +1,3 @@
-// import './Scroll.css';
-import '../styles/index.css';
 import React from 'react';
 import {
   createKeyframes,

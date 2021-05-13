@@ -12,7 +12,6 @@ export default function ScrollAnimationItem({
   children,
   delay = 0,
   duration = 1200,
-  // path = 'top',
   className,
   offset = { x: 0, y: 0, z: 0 },
   threshold = 0.7,
