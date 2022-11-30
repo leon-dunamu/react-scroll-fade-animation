@@ -139,7 +139,7 @@ export const ScrollWrapper = ({ itemList }) => (
 );
 ```
 
-more Examples are in [DEMO](https://1seok2.github.io/react-scroll-fade-animation/)
+more Examples are in [DEMO](https://leon-dunamu.github.io/react-scroll-fade-animation/)
 
 ## 🧑🏻‍💻 Contribute
 
