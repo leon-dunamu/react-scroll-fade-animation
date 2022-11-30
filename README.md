@@ -8,7 +8,7 @@ You can use this with several animations by SIMPLE CODES.
 
 ## 💁🏻‍♂️ DEMO
 
-- [React Scroll Fade Animation Demo](https://1seok2.github.io/react-scroll-fade-animation/)
+- [React Scroll Fade Animation Demo](https://leon-dunamu.github.io/react-scroll-fade-animation/)
 
 ## 👀 Provide Animations (will be updated for more functions later)
 
