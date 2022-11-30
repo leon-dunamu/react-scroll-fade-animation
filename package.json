@@ -16,21 +16,21 @@
     "predeploy": "cd demo && npm run build",
     "deploy": "git subtree push --prefix demo/dist origin gh-pages"
   },
-  "homepage": "https://1seok2.github.io/react-scroll-fade-animation",
+  "homepage": "https://leon-dunamu.github.io/react-scroll-fade-animation",
   "bugs": {
-    "url": "https://github.com/1seok2/react-scroll-fade-animation/issues",
+    "url": "https://github.com/leon-dunamu/react-scroll-fade-animation/issues",
     "email": "unos@khu.ac.kr"
   },
   "author": {
     "name": "WonSeog Choi",
     "email": "unos@khu.ac.kr",
-    "url": "https://1seok2.github.io"
+    "url": "https://leon-dunamu.github.io"
   },
   "license": "MIT",
   "main": "build/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/1seok2/react-scroll-fade-animation.git"
+    "url": "https://github.com/leon-dunamu/react-scroll-fade-animation.git"
   },
   "peerDependencies": {
     "react": "^17.0.0",
